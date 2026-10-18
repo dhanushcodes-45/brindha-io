@@ -1,7 +1,7 @@
 /* ====== EDIT THESE ====== */
 const CONFIG = {
   name: "Brindha",          // birthday person
-  from: "Your Sinor",         // who is sending
+  from: "Your Sinior",         // who is sending
   day: 19, month: 10,        // birthday date used as the secret password
   hint: "Hint: it's the day we celebrate you 💕",
   dateText: "19 · 10 · 2026"
