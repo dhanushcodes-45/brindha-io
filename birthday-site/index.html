@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Happy Birthday 💖</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,500;1,500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head>
+<body>
+<div id="hearts"></div><canvas id="fx"></canvas>
+
+<!-- STEP 1: DATE QUIZ -->
+<section id="lock"><div class="lockcard">
+  <div class="heart big">♥</div>
+  <h2>One little question…</h2>
+  <p>Enter our special birthday date to open your surprise</p>
+  <div class="dates"><input id="dd" placeholder="DD" maxlength="2" inputmode="numeric"><span>/</span><input id="mm" placeholder="MM" maxlength="2" inputmode="numeric"></div>
+  <button id="open">Open 💌</button><p id="hint"></p>
+</div></section>
+
+<main id="site" class="hidden">
+
+<!-- 1 HERO -->
+<header class="hero2 red">
+  <div class="hero-bg ph" data-img="images/hero.jpg"><i>♥</i></div><div class="veil"></div>
+  <div class="hero-text2">
+    <p class="small">a letter made just for you</p>
+    <h1><span id="typed"></span><span class="cursor">|</span></h1>
+    <h2 class="name" id="name"></h2>
+    <p class="date" id="datetxt"></p>
+  </div>
+  <div class="scroll">scroll ↓</div>
+</header>
+
+<!-- 2 LETTER -->
+<section class="note-wrap" id="noteWrap"><div class="sticky">
+  <div class="collage"><div class="ph c1" data-img="images/s2.jpg"></div><div class="ph c2" data-img="images/s1.jpg"></div><div class="ph c3" data-img="images/r1.jpg"></div><div class="ph c4" data-img="images/s4.jpg"></div></div>
+  <div class="paper" id="paper">
+    <div class="pcol">
+      <h3>A Letter For<br><em id="nm2"></em></h3>
+      <p><b>With love, from my heart to yours<br>Happy Birthday to my favourite person.</b></p>
+      <p><b>Today is all about celebrating you — the way you smile, the way you care, and the happiness you bring into my life.</b></p>
+      <p>I made this little letter so you can always remember how loved you are. Every laugh we shared, every little memory — they are my favourite treasures.</p>
+    </div>
+    <div class="rule"></div>
+    <div class="pcol r">
+      <p>You are not just a person in my life, but a feeling of home. Through busy days and quiet nights, your kindness has shaped who I am today.</p>
+      <p>May this year bring you everything your heart wishes for — good health, endless laughter and dreams that come true. Thank you for being you. 💖</p>
+      <div class="sigrow"><div>With Love,<br><b id="from"></b><br>Forever yours</div><div class="seal2">♥</div></div>
+    </div>
+  </div>
+  <div class="bigword">BIRTHDAY</div>
+</div></section>
+
+<!-- 3 GALLERY CARDS -->
+<section class="red">
+  <h3 class="title light" data-anim="slide-left">one of my <em>favorite</em> moments</h3>
+  <p class="tap">tap a card to flip ♥</p>
+  <div class="cards">
+    <div class="flip" data-anim="rotate" style="--r:-4deg"><div class="inner"><div class="face front polaroid"><div class="ph" data-img="images/g1.jpg"><i>♥</i></div><span>Our laughs</span></div><div class="face back">You make every day brighter ✨</div></div></div>
+    <div class="flip" data-anim="rotate" style="--r:3deg"><div class="inner"><div class="face front polaroid"><div class="ph" data-img="images/g2.jpg"><i>♥</i></div><span>Sweet times</span></div><div class="face back">My heart's happiest place 💕</div></div></div>
+    <div class="flip" data-anim="rotate" style="--r:-2deg"><div class="inner"><div class="face front polaroid"><div class="ph" data-img="images/g3.jpg"><i>♥</i></div><span>Pure joy</span></div><div class="face back">Never stop smiling 🌸</div></div></div>
+    <div class="flip" data-anim="rotate" style="--r:4deg"><div class="inner"><div class="face front polaroid"><div class="ph" data-img="images/g4.jpg"><i>♥</i></div><span>Forever us</span></div><div class="face back">Memories I will always keep 📷</div></div></div>
+  </div>
+</section>
+
+<!-- 4 DAD & DAUGHTER -->
+<section class="cream">
+  <h3 class="title" data-anim="fade-up">Dad &amp; Daughter</h3>
+  <div class="duo">
+    <div class="polaroid big" data-anim="slide-left" style="--r:-5deg"><div class="ph" data-img="images/dad.jpg"><i>👨</i></div><span>Dad</span></div>
+    <div class="beat">♥</div>
+    <div class="polaroid big" data-anim="slide-right" style="--r:5deg"><div class="ph" data-img="images/daughter.jpg"><i>👧</i></div><span>Daughter</span></div>
+  </div>
+  <div class="note" data-anim="blur">
+    <h4>Dad has always been with you</h4>
+    <p>From your very first step to every big dream you chase, Dad has been right beside you — your first hero and your strongest support. Even when words fall short, his love shows in every quiet sacrifice and every proud smile. He believes in you today, tomorrow and always. Whenever the world feels heavy, remember: you are never alone, because Dad's love walks with you wherever you go. 💖</p>
+  </div>
+</section>
+
+<!-- 5 LOVE SLIDER (3D coverflow) -->
+<section class="red lg">
+  <h3 class="title light" data-anim="zoom">Love Gallery</h3>
+  <p class="tap">swipe, drag or tap the side cards ♥</p>
+  <div class="cf" id="cf" tabindex="0" aria-label="Love gallery"><div class="cf-track" id="cfTrack"></div></div>
+  <div class="cf-cap" id="cfCap"></div>
+  <div class="cf-prog"><i id="cfProg"></i></div>
+  <div class="cf-ui"><button class="cfb" id="prev" aria-label="Previous">‹</button><div class="cf-dots" id="cfDots"></div><button class="cfb" id="next" aria-label="Next">›</button></div>
+  <div class="ctrl"><button id="like" aria-label="Love it">♥</button></div>
+</section>
+
+<!-- 5b MEMORY WALL -->
+<section class="wall"><h3 class="title light" data-anim="blur">Our Memory Wall</h3>
+  <div class="stage" id="stage"></div><div class="blurfade"></div>
+</section>
+
+<!-- 6 REASONS (timeline) -->
+<section class="cream">
+  <h3 class="title" data-anim="slide-right"><span class="tag">reasons</span> I Love You</h3>
+  <div class="tl" id="tl"></div>
+</section>
+
+<!-- 7 FINALE -->
+<section class="red finale">
+  <div class="fin-photo" data-anim="zoom"><div class="ph" data-img="images/hero.jpg"><i>♥</i></div></div>
+  <p class="small" data-anim="fade-up">one last thing…</p>
+  <h2 class="iloveyou" data-anim="zoom">I LOVE YOU</h2>
+  <p class="fin-msg" data-anim="fade-up">Happy Birthday — thank you for <em>being you</em>.</p>
+  <p class="fin-sign" data-anim="fade-up">Forever yours,<br><b id="from2"></b></p>
+  <button id="again">Celebrate again 🎉</button>
+</section>
+</main>
+<script src="script.js"></script>
+</body></html>
